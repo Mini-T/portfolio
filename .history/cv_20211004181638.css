@@ -1,0 +1,165 @@
+body {
+  scroll-margin-inline-start: initial;
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  width: 1920px;
+  margin: 0px;
+  padding: 0px;
+  overflow-y: auto;
+  overflow-x: unset;
+  min-height: 100vh;
+}
+main {
+  position: sticky;
+  display: grid;
+  grid-template-rows: 80px minmax(1fr, max-content) minmax(1fr, max-content) minmax(
+      1fr,
+      max-content
+    ) minmax(1fr, max-content);
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-areas:
+    "nav nav nav nav"
+    ". . . . "
+    "presentation . . . "
+    ". . . . "
+    ". . . skills"
+    ". . . ."
+    "formation . . ."
+    ". . . ."
+    ". . . diplome";
+}
+
+nav {
+  grid-area: nav;
+  color: whitesmoke;
+  font-size: 30px;
+  /* border-bottom: solid 2px black;
+  border-top: solid 2px black; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  grid-template-areas: " btnpresentation btnskills btnformation btndiplomes ";
+}
+#btnskill {
+  grid-area: btnskills;
+}
+#btnformation {
+  grid-area: btnformation;
+}
+#btndiplomes {
+  grid-area: btndiplomes;
+}
+#btnpresentation {
+  grid-area: btnpresentation;
+}
+a {
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  color: unset;
+}
+#spawnscreen {
+  display: flex;
+
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.apparition {
+  animation: 1.5s ease-out 1 navanime;
+}
+@keyframes navanime {
+  0% {
+    opacity: 0%;
+    position: relative;
+
+    right: 40%;
+  }
+  100% {
+    opacity: 80%;
+    position: relative;
+    right: 0%;
+  }
+}
+@keyframes navanimereverse {
+  0% {
+    opacity: 0%;
+    position: relative;
+    left: 40%;
+  }
+  100% {
+    opacity: 80%;
+    position: relative;
+    left: 0%;
+  }
+}
+.image {
+  width: auto;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  max-width: 100vw;
+  height: auto;
+  border: solid 10px black;
+  animation-duration: 10s;
+  animation-name: caroussel;
+}
+@keyframes caroussel {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-959px);
+  }
+  50% {
+    transform: translateX(-2758px);
+  }
+  75% {
+    transform: translateX(-3558px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.titre {
+  margin-left: 50px;
+  font-family: "Courier New", Courier, monospace;
+  color: whitesmoke;
+  
+}
+#presentation {
+  grid-area: presentation;
+  
+}
+#skills {
+  grid-area: skills;
+  
+}
+#formation {
+  grid-area: formation;
+  
+}
+#diplome {
+  grid-area: diplome;
+  
+}
+.apparitionreverse {
+  animation: 1.5s ease-out 1 navanimereverse;
+}
+.reveal{
+  opacity: 0;
+}
+.revealtrue{
+  opacity: 100%;
+}

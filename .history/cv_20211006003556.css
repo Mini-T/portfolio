@@ -1,0 +1,199 @@
+body {
+  display: grid;
+  justify-content: center;
+  background-color: rgb(83, 83, 83);
+  margin: 0px;
+  padding: 0px;
+}
+#master {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+main {
+  justify-content: center;
+  justify-self: center;
+  width: 75vw;
+}
+#gridset{
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-area;
+}
+#one{
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-areas: "nav nav nav nav";
+  
+}
+#two{
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-areas: "nav nav nav nav";
+}
+#three{
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-areas: "nav nav nav nav";
+}
+#four{
+  display: grid;
+  grid-template-rows: 80px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: rgb(46, 46, 46);
+  grid-template-areas: "nav nav nav nav";
+}
+nav {
+  grid-area: nav;
+  color: whitesmoke;
+  font-size: 30px;
+  /* border-bottom: solid 2px black;
+  border-top: solid 2px black; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  grid-template-areas: " btnpresentation btnskills btnformation btndiplomes ";
+}
+.navpresentationfocus {
+  grid-area: nav;
+  color: whitesmoke;
+  font-size: 30px;
+  /* border-bottom: solid 2px black;
+  border-top: solid 2px black; */
+  display: grid;
+  grid-template-columns: 1fr;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  grid-template-areas: "btnpresentation";
+}
+.hidden {
+  display: none;
+}
+#btnskill {
+  grid-area: btnskills;
+}
+#btnformation {
+  grid-area: btnformation;
+}
+#btndiplomes {
+  grid-area: btndiplomes;
+}
+#btnpresentation {
+  
+  grid-area: btnpresentation;
+}
+a {
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  color: unset;
+}
+#spawnscreen {
+  display: flex;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.apparition {
+  animation: 1s ease-out 1 navanime;
+}
+@keyframes navanime {
+  0% {
+    opacity: 0%;
+    position: relative;
+
+    right: 40%;
+  }
+  100% {
+    opacity: 80%;
+    position: relative;
+    right: 0%;
+  }
+}
+@keyframes navanimereverse {
+  0% {
+    opacity: 0%;
+    position: relative;
+    left: 40%;
+  }
+  100% {
+    opacity: 80%;
+    position: relative;
+    left: 0%;
+  }
+}
+.image {
+  width: auto;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  max-width: 100vw;
+  height: auto;
+  border: solid 10px black;
+  animation-duration: 10s;
+  animation-name: caroussel;
+}
+@keyframes caroussel {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-959px);
+  }
+  50% {
+    transform: translateX(-2758px);
+  }
+  75% {
+    transform: translateX(-3558px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.apparitionreverse {
+  animation: 1s ease-out 1 navanimereverse;
+}
+
+.onglet {
+  justify-self: center;
+  width: 200px;
+  height: 80px;
+  background: unset;
+  border: unset;
+  color: whitesmoke;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+}
+.zoom {
+  transition: all 0.3s ease-in;
+  margin-left: 30VW;
+  position: relative;
+  justify-self: center;
+  margin-bottom: 45%;
+  font-size: 45px;
+}
